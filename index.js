@@ -484,11 +484,6 @@ app.post('/users', async (req, res) => {
 
 
 
-
-
-
-
-
     // Class APIs
     app.post('/classes',  async (req, res) => {
       const newClass = req.body;
@@ -602,9 +597,6 @@ app.put('/classes/:id', async (req, res) => {
 
 
 
-
-
-
 // all user api:
 app.get('/users', async (req, res) => {
   try {
@@ -612,7 +604,7 @@ app.get('/users', async (req, res) => {
     let query = {};
 
     if (search) {
-      // Search by name or email (case-insensitive)
+     
       query = {
         $or: [
           { name: { $regex: search, $options: "i" } },
