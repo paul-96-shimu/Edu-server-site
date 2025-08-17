@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const stripe = require('stripe')(process.env.PAYMENT_GATEWAY_SECRET);
 
-app.use(cors({ origin: ['http://localhost:5173','https://clever-sprite-0120ae.netlify.app'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:5173','https://darling-yeot-4e0860.netlify.app'], credentials: true }));
 app.use(express.json());
 
 
@@ -157,8 +157,6 @@ app.get('/feedbacks', async (req, res) => {
     res.status(500).send({ error: 'Failed to fetch feedbacks' });
   }
 });
-
-
 
 
     // tolal enrollments  api
@@ -328,12 +326,6 @@ app.get('/classes/approved',   async (req, res) => {
 
 
 
-
-
-    
-
-
-
     // 📁 index.js or users.route.js
 app.get('/users/role/:email', async (req, res) => {
   const { email } = req.params;
@@ -386,10 +378,6 @@ app.get('/users/search', async (req, res) => {
     res.status(500).send({ message: "Server error" });
   }
 });
-
-
-
-
 
 
 
