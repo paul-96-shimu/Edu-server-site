@@ -391,13 +391,13 @@ app.put('/users/role/remove-admin/:email', async (req, res) => {
   const email = req.params.email;
   const result = await userCollection.updateOne(
     { email },
-    { $set: { role: 'student' } } // or 'user'
+    { $set: { role: 'student' } } 
   );
   res.send(result);
 });
 
 
-// user collection
+// user collection   
 app.post('/users', async (req, res) => {
   const user = req.body;
 
