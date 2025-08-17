@@ -15,12 +15,6 @@ app.use(express.json());
 
 
 
-
-
-
-
-
-
 // Middleware
 
 const serviceAccount = require("./edufirebaseidtoken.json");
@@ -407,17 +401,17 @@ app.put('/users/role/remove-admin/:email', async (req, res) => {
 app.post('/users', async (req, res) => {
   const user = req.body;
 
-  // Step 1: একই ইমেইল আছে কিনা চেক করে
+ 
   const existingUser = await userCollection.findOne({ email: user.email });
 
-  // Step 2: যদি আগে থেকেই থাকে, তাহলে insert না করে message দেয়
+
   if (existingUser) {
     return res.send({ message: 'User already exists' });
   }
 
-  // Step 3: যদি না থাকে, তাহলে insert করে
+ 
   const result = await userCollection.insertOne(user);
-  res.send(result); // { acknowledged: true, insertedId: ... }
+  res.send(result); 
 });
 
 
