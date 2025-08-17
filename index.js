@@ -232,7 +232,7 @@ app.get('/enrollments/:email', async (req, res) => {
 
 
 
-   // ✅ User POST API - with email lowercase
+   //  User POST API - with email lowercase
 app.post('/users', async (req, res) => {
   const user = req.body;
 
@@ -242,7 +242,7 @@ app.post('/users', async (req, res) => {
   const existing = await userCollection.findOne({ email: user.email });
   if (existing) return res.send({ message: "User already exists" });
 
-  // ✅ Default role if not provided
+
   if (!user.role) user.role = 'student';
 
   const result = await userCollection.insertOne(user);
@@ -252,7 +252,7 @@ app.post('/users', async (req, res) => {
 
 
 // popular classes API
-// ✅ Get approved classes sorted by totalEnrollment descending
+
 app.get('/popular-classes',  async (req, res) => {
   try {
     const classes = await classCollection
@@ -314,9 +314,6 @@ app.get('/classes/approved',   async (req, res) => {
     res.status(500).send({ error: 'Failed to fetch approved classes' });
   }
 });
-
-
-
 
 
 
