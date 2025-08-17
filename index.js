@@ -626,22 +626,7 @@ app.get('/users', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // payment api
-
-
-
-
 
 
 app.post('/create-payment-intent', async (req, res) => {
